@@ -9,3 +9,6 @@ Execute `runscript('recover_virtual_inheritance.py')` from IDAPro console. This 
 or
 
 Go to File -> Script file... and select recover_virtual_inheritance.py
+
+## Binaries
+The binaries that we have tested VirtAnalyzer on can be found in the binaries/ directory. They are C++ binaries compiled with GCC 7.3.0.
