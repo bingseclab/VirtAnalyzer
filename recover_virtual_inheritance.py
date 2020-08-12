@@ -1,13 +1,8 @@
-import ctypes
 import idc
 import idascript
-#import matplotlib.pyplot as plt
 from idaapi import *
-try:
-    import cPickle as pickle
-except:
-    import pickle
 import copy
+
 segs = {}
 DWORD_SIZE = 8
 pure_virtual = 0
@@ -39,6 +34,11 @@ VTables_To_VTTEntries = {}
 vbaseOffsets = {}
 distinctVBases = {}
 intermediate_bases = {}
+VTable_hash = {}
+hash_to_actual_VTable = {}
+got_real_vtable_for_key = {}
+ctor_vtable_and_unique_VBOs = {}
+ctor_to_actual_vtable = {}
 
 ####################Start of functions that gather VTables###########################
 def buildsegmap():
@@ -919,7 +919,6 @@ def main():
     get_intermediate_bases()
     finalize_virtual_inher()
     get_rem_intermediates()
-    getVTableNames()
     print('Derived class [Virtual Bases] [Intermediate Bases]')
     for d in distinctVBases:
         if d in intermediate_bases:
