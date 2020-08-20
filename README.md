@@ -2,7 +2,7 @@
 VirtAnalyzer is implemented as an IDAPython script. It recovers virtual inheritance tree from a C++ binary.
 
 ## How to run the script
-recover_virtual_inheritance_<itanium/msvc>.py can be executed by doing one of the following:
+The binary to be analyzed must first be loaded onto IDAPro. Then recover_virtual_inheritance_<itanium/msvc>.py can be executed by doing one of the following:
 
 Execute `runscript('recover_virtual_inheritance_<itanium/msvc>.py')` from IDAPro console. This should be full path to the script.
 
